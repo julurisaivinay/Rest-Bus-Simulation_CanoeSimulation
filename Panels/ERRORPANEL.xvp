@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="ERRORPANEL">
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text">
+      <Property Name="Name">StaticTextControl1</Property>
+      <Property Name="Size">450, 74</Property>
+      <Property Name="Location">2, 21</Property>
+      <Property Name="Font">Microsoft Sans Serif, 48pt, style=Bold</Property>
+      <Property Name="Text">Invalid Range</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">480, 124</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>

@@ -1,0 +1,228 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  message BCM_Msg_1_CAN CAN_BCM_MSG_1_CAN;
+  message Drive_Asst_Data_CAN CAN_DRIVE_ASST_DATA_CAN;
+  
+  msTimer TIMER_BCM_MSG_1_CAN;
+  msTimer TIMER_DRIVE_ASST_DATA_CAN;
+  
+  const long TIMER_VALUE_DRIVE_ASST_DATA_CAN = 1000;
+  const long TIMER_VALUE_BCM_MSG_1_CAN = 100;
+  
+}
+
+On start
+{
+  setTimer(TIMER_BCM_MSG_1_CAN, TIMER_VALUE_BCM_MSG_1_CAN);
+  setTimer(TIMER_DRIVE_ASST_DATA_CAN, TIMER_VALUE_DRIVE_ASST_DATA_CAN);
+  
+}
+
+
+// code for BCM_Msg_1_CAN @@Fixed periodic
+On timer TIMER_BCM_MSG_1_CAN
+{
+  sendBCM_Msg_1_CAN();
+  setTimer(TIMER_BCM_MSG_1_CAN, TIMER_VALUE_BCM_MSG_1_CAN);
+}
+
+void sendBCM_Msg_1_CAN()
+{
+  byte can_miss_value;
+  byte can_main_value;
+  
+  if(can_main_value == 0x0 && can_miss_value == 0x0)
+  {
+   output(CAN_BCM_MSG_1_CAN);
+  }
+}
+
+on sysvar BCM::Sys_Ignition_Status
+{
+  CAN_BCM_MSG_1_CAN.Ignition_Status = @BCM::Sys_Ignition_Status;
+}
+
+on sysvar BCM::Sys_CRD_Msg_Txt_Rq_Dsply
+{
+  CAN_BCM_MSG_1_CAN.CRD_Msg_Txt_Rq_Dsply = @BCM::Sys_CRD_Msg_Txt_Rq_Dsply;
+}
+
+on sysvar BCM::Sys_CRD_Msg_Txt_Rq 
+{
+  byte Max_Value;
+  Max_Value = @BCM::Sys_CRD_Msg_Txt_Rq;
+  
+  if(Max_Value <= 0xFFFF)
+  {
+   CAN_BCM_MSG_1_CAN.CRD_Msg_Txt_Rq = @BCM::Sys_CRD_Msg_Txt_Rq;
+  }
+  else
+  {
+    openPanel("ERRORPANEL");
+  }
+}
+
+on sysvar Main_Switches::Sys_Miss_BCM_Msg_1_CAN
+{
+  if(@Main_Switches::Sys_Miss_BCM_Msg_1_CAN == 0x1)
+  {
+    cancelTimer(TIMER_BCM_MSG_1_CAN);
+  }
+  else
+  {
+   setTimer(TIMER_BCM_MSG_1_CAN, TIMER_VALUE_BCM_MSG_1_CAN); 
+  }   
+}
+
+// code for Drive_Asst_Data_CAN
+
+on timer TIMER_DRIVE_ASST_DATA_CAN
+ {
+  sendDrive_Asst_Data_CAN();
+  setTimer(TIMER_DRIVE_ASST_DATA_CAN, TIMER_VALUE_DRIVE_ASST_DATA_CAN);
+ }
+
+void  sendDrive_Asst_Data_CAN()
+{
+  byte can_miss_value;
+  byte can_main_value;
+  
+  if(can_main_value == 0x0 && can_miss_value == 0x0)
+  {
+   output(CAN_DRIVE_ASST_DATA_CAN);
+  }  
+}
+
+on sysvar BCM::Sys_Tuner_Scrn_1_Data
+ {
+  byte Max_value;
+  Max_value = @BCM::Sys_Tuner_Scrn_1_Data;
+  if(Max_value <= 0xFF)
+  {
+   CAN_DRIVE_ASST_DATA_CAN.Tuner_Scrn_1_Data = @BCM::Sys_Tuner_Scrn_1_Data;
+   sendDrive_Asst_Data_CAN();
+   }
+  else
+  {
+    openPanel("ERRORPANEL");
+  }
+ }
+
+
+
+on sysvar BCM::Sys_Tuner_Scrn_2_Data
+{
+  byte Max_value;
+  Max_value = @BCM::Sys_Tuner_Scrn_2_Data;
+  if(Max_value <= 0xFF)
+  {
+   CAN_DRIVE_ASST_DATA_CAN.Tuner_Scrn_2_Data = @BCM::Sys_Tuner_Scrn_2_Data;
+   sendDrive_Asst_Data_CAN();
+   }
+  else
+  {
+    openPanel("ERRORPANEL");
+  }
+  
+}
+ on sysvar BCM::Sys_Menu_scrn_1_Data
+{
+  CAN_DRIVE_ASST_DATA_CAN.Menu_scrn_1_Data = @BCM::Sys_Menu_scrn_1_Data;
+  sendDrive_Asst_Data_CAN();
+}
+
+
+on sysvar BCM::Sys_Artst_Name_1_Rq
+{
+  byte Max_value;
+  Max_value = @BCM::Sys_Artst_Name_1_Rq;
+  
+  if(Max_value <= 0x7)
+  {
+   CAN_DRIVE_ASST_DATA_CAN.Artst_Name_1_Rq = @BCM::Sys_Artst_Name_1_Rq;
+    sendDrive_Asst_Data_CAN();
+ }
+ else
+  {
+    openPanel("ERRORPANEL");
+  }
+}
+
+on sysvar BCM::Sys_Artst_Name_2_Rq
+{
+  byte Max_value;
+  Max_value = @BCM::Sys_Artst_Name_2_Rq;
+  
+  if(Max_value <= 0x7)
+  {
+   CAN_DRIVE_ASST_DATA_CAN.Artst_Name_2_Rq = @BCM::Sys_Artst_Name_2_Rq;
+   sendDrive_Asst_Data_CAN();
+ }
+ else
+  {
+    openPanel("ERRORPANEL");
+  } 
+  
+}
+
+on sysvar BCM::Sys_Radio_Txt_1_Rq
+{
+  byte Max_value;
+  Max_value = @BCM::Sys_Radio_Txt_1_Rq;
+  if(Max_value <= 0xF)
+  {
+    CAN_DRIVE_ASST_DATA_CAN.Radio_Txt_1_Rq = @BCM::Sys_Radio_Txt_1_Rq;
+    sendDrive_Asst_Data_CAN();
+  }
+  else
+  {
+    openPanel("ERRORPANEL");
+  }  
+}
+
+on sysvar BCM::Sys_Radio_Txt_2_Rq
+{
+  byte Max_value;
+  Max_value = @BCM::Sys_Radio_Txt_2_Rq;
+  if(Max_value <= 0xF)
+  {
+    CAN_DRIVE_ASST_DATA_CAN.Radio_Txt_2_Rq = @BCM::Sys_Radio_Txt_2_Rq;
+    sendDrive_Asst_Data_CAN();
+  }
+  else
+  {
+    openPanel("ERRORPANEL");
+  } 
+}
+
+on sysvar BCM::Sys_Radio_Txt_3_Rq
+{
+  byte Max_value;
+  Max_value = @BCM::Sys_Radio_Txt_3_Rq;
+  if(Max_value <= 0xF)
+  {
+    CAN_DRIVE_ASST_DATA_CAN.Radio_Txt_3_Rq = @BCM::Sys_Radio_Txt_3_Rq;
+    sendDrive_Asst_Data_CAN();
+  }
+  else
+  {
+    openPanel("ERRORPANEL");
+  }   
+} 
+on sysvar Main_Switches::Sys_Miss_Drive_Asst_Data_CAN 
+{
+  if(@Main_Switches::Sys_Miss_Drive_Asst_Data_CAN == 0x1)
+  {
+    cancelTimer(TIMER_DRIVE_ASST_DATA_CAN);
+  }
+  else 
+  {
+    setTimer(TIMER_DRIVE_ASST_DATA_CAN, TIMER_VALUE_DRIVE_ASST_DATA_CAN);  
+  }
+}

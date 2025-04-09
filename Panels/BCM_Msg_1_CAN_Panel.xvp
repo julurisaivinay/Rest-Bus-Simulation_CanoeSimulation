@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="BCM_Msg_1_CAN_Panel">
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" Children="Controls" ControlName="Group Box">
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Switch/Indicator">
+        <Property Name="Name">SwitchControl1</Property>
+        <Property Name="Size">26, 37</Property>
+        <Property Name="Location">628, 0</Property>
+        <Property Name="StateCnt">2</Property>
+        <Property Name="SwitchValues">1;2;0;1</Property>
+        <Property Name="SymbolConfiguration">5;16;Main_Switches;;;Sys_Miss_BCM_Msg_1_CAN;1;;;-1;;;</Property>
+        <Property Name="TabIndex">4</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl4" Children="Controls" ControlName="Group Box 2">
+        <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl3" Children="Controls" ControlName="Input/Output Box">
+          <Property Name="Name">TextBoxControl3</Property>
+          <Property Name="Size">106, 20</Property>
+          <Property Name="Location">98, 157</Property>
+          <Property Name="AlarmUpperTextColor">WindowText</Property>
+          <Property Name="ValueDecimalPlaces">0</Property>
+          <Property Name="AlarmLowerBkgColor">Salmon</Property>
+          <Property Name="ValueDisplay">Decimal</Property>
+          <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+          <Property Name="AlarmLowerTextColor">WindowText</Property>
+          <Property Name="AlarmGeneralSettings">1;2;0;3</Property>
+          <Property Name="DisplayLabel">Hide</Property>
+          <Property Name="DescriptionText">Sys_Ignition_Status:</Property>
+          <Property Name="DescriptionSize">0, 0</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_Ignition_Status;1;;;-1;;;</Property>
+          <Property Name="TabIndex">4</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl3" Children="Controls" ControlName="Radio Button">
+          <Property Name="Name">RadioButtonControl3</Property>
+          <Property Name="Size">74, 20</Property>
+          <Property Name="Location">41, 103</Property>
+          <Property Name="Font">Microsoft Sans Serif, 10.2pt, style=Bold</Property>
+          <Property Name="Text">0x1 Run</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_Ignition_Status;1;;;-1;;;</Property>
+          <Property Name="TabIndex">1</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl4" Children="Controls" ControlName="Radio Button">
+          <Property Name="Name">RadioButtonControl4</Property>
+          <Property Name="Size">68, 20</Property>
+          <Property Name="Location">41, 53</Property>
+          <Property Name="Font">Microsoft Sans Serif, 10.2pt, style=Bold</Property>
+          <Property Name="Text">0x0 Off</Property>
+          <Property Name="SwitchValue">0</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_Ignition_Status;1;;;-1;;;</Property>
+          <Property Name="TabIndex">0</Property>
+        </Object>
+        <Property Name="Name">GroupBoxControl4</Property>
+        <Property Name="Size">234, 219</Property>
+        <Property Name="Location">224, 301</Property>
+        <Property Name="BackColor">Window</Property>
+        <Property Name="Font">Microsoft YaHei, 10pt</Property>
+        <Property Name="Text">Ignition_Status</Property>
+        <Property Name="TabIndex">3</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl3" Children="Controls" ControlName="Group Box 2">
+        <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl2" Children="Controls" ControlName="Input/Output Box">
+          <Property Name="Name">TextBoxControl2</Property>
+          <Property Name="Size">106, 20</Property>
+          <Property Name="Location">98, 157</Property>
+          <Property Name="AlarmUpperTextColor">WindowText</Property>
+          <Property Name="ValueDecimalPlaces">0</Property>
+          <Property Name="AlarmLowerBkgColor">Salmon</Property>
+          <Property Name="ValueDisplay">Symbolic</Property>
+          <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+          <Property Name="AlarmLowerTextColor">WindowText</Property>
+          <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+          <Property Name="DisplayLabel">Hide</Property>
+          <Property Name="DescriptionText">Sys_CRD_Msg_Txt_Rq_Dsply:</Property>
+          <Property Name="DescriptionSize">0, 0</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_CRD_Msg_Txt_Rq_Dsply;1;;;-1;;;</Property>
+          <Property Name="TabIndex">4</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl2" Children="Controls" ControlName="Radio Button">
+          <Property Name="Name">RadioButtonControl2</Property>
+          <Property Name="Size">67, 20</Property>
+          <Property Name="Location">41, 103</Property>
+          <Property Name="Font">Microsoft Sans Serif, 10.2pt, style=Bold</Property>
+          <Property Name="Text">0x1 On</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_CRD_Msg_Txt_Rq_Dsply;1;;;-1;;;</Property>
+          <Property Name="TabIndex">1</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl1" Children="Controls" ControlName="Radio Button">
+          <Property Name="Name">RadioButtonControl1</Property>
+          <Property Name="Size">68, 20</Property>
+          <Property Name="Location">41, 53</Property>
+          <Property Name="Font">Microsoft Sans Serif, 10.2pt, style=Bold</Property>
+          <Property Name="Text">0x0 Off</Property>
+          <Property Name="SwitchValue">0</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_CRD_Msg_Txt_Rq_Dsply;1;;;-1;;;</Property>
+          <Property Name="TabIndex">0</Property>
+        </Object>
+        <Property Name="Name">GroupBoxControl3</Property>
+        <Property Name="Size">234, 219</Property>
+        <Property Name="Location">369, 61</Property>
+        <Property Name="Font">Microsoft YaHei, 10.2pt</Property>
+        <Property Name="Text">CRD_Msg_Txt_Rq_Dsply</Property>
+        <Property Name="TabIndex">2</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl2" Children="Controls" ControlName="Group Box 2">
+        <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl1" Children="Controls" ControlName="Input/Output Box">
+          <Property Name="Name">TextBoxControl1</Property>
+          <Property Name="Size">106, 20</Property>
+          <Property Name="Location">77, 158</Property>
+          <Property Name="AlarmUpperTextColor">WindowText</Property>
+          <Property Name="ValueDecimalPlaces">0</Property>
+          <Property Name="AlarmLowerBkgColor">Salmon</Property>
+          <Property Name="ValueDisplay">Decimal</Property>
+          <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+          <Property Name="AlarmLowerTextColor">WindowText</Property>
+          <Property Name="AlarmGeneralSettings">1;2;0;65535</Property>
+          <Property Name="DisplayLabel">Hide</Property>
+          <Property Name="DescriptionText">Sys_CRD_Msg_Txt_Rq:</Property>
+          <Property Name="DescriptionSize">0, 0</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_CRD_Msg_Txt_Rq;1;;;-1;;;</Property>
+          <Property Name="TabIndex">3</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls" ControlName="Static Text">
+          <Property Name="Name">StaticTextControl2</Property>
+          <Property Name="Size">101, 17</Property>
+          <Property Name="Location">160, 100</Property>
+          <Property Name="Font">Microsoft Sans Serif, 10pt, style=Bold</Property>
+          <Property Name="Text">Max: 0XFFFF</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text">
+          <Property Name="Name">StaticTextControl1</Property>
+          <Property Name="Size">68, 17</Property>
+          <Property Name="Location">12, 100</Property>
+          <Property Name="Font">Microsoft Sans Serif, 10pt, style=Bold</Property>
+          <Property Name="Text">Min: 0x0</Property>
+        </Object>
+        <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.63.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls" ControlName="Track Bar">
+          <Property Name="Name">TrackBarControl1</Property>
+          <Property Name="Size">182, 47</Property>
+          <Property Name="Location">38, 42</Property>
+          <Property Name="Maximum">65535</Property>
+          <Property Name="MaximumDouble">65535</Property>
+          <Property Name="SymbolConfiguration">5;16;BCM;;;Sys_CRD_Msg_Txt_Rq;1;;;-1;;;</Property>
+          <Property Name="TabIndex">0</Property>
+        </Object>
+        <Property Name="Name">GroupBoxControl2</Property>
+        <Property Name="Size">279, 219</Property>
+        <Property Name="Location">20, 50</Property>
+        <Property Name="Font">Microsoft YaHei, 10.2pt</Property>
+        <Property Name="Text">CRD_Msg_Txt_Rq</Property>
+        <Property Name="TabIndex">1</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">721, 540</Property>
+      <Property Name="Location">28, 26</Property>
+      <Property Name="Font">Microsoft Sans Serif, 12pt, style=Bold</Property>
+      <Property Name="Text">0x38A BCM_Msg_1_CAN</Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">1023, 592</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
